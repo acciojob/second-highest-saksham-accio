@@ -9,8 +9,22 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-			//Write your code here
-			
+			//set default values for largest and secondLargest
+			let largest = -Infinity;
+			let secondLargest = -Infinity;
+
+			for(let i=0; i<arr.length; i++){
+				//arr[i] > largest and secondLargest
+				if(arr[i] > largest){
+					//secondLargest will become largest
+					secondLargest = largest;
+					//largest will become arr[i]
+					largest = arr[i];
+				} else if(arr[i] < largest && arr[i] > secondLargest){
+					secondLargest = arr[i];
+				}
+			}
+			return secondLargest;	
 		}
 
 		function Main() {
